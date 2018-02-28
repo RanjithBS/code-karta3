@@ -1,27 +1,29 @@
-#include <stdio.h>
- 
-int main()
+
+#include<stdio.h>
+void main()
 {
     char str[100];
-    int i=0,a,count;
-     printf("Enter a string: ");
+    int letters=0, no=0, spclchar=0, i=0;
+    printf("Enter any string : ");
     gets(str);
-     for(count=0;str[count]!='\0';count++)
+    while(str[i]!='\0')
     {
+        if((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z'))
+        {
+            letters++;
+        }
+        else if(str[i]>='0' && str[i]<='9')
+        {
+            no++;
+        }
+        else
+        {
+            spclchar++;
+        }
+
+        i++;
     }
-    for(a=0;a<count;a++)
-    {
-if(str[a]>='0' && str[a]<='9')
-else if(str[a]>='A' && str[a]<='Z')
-else if(str[a]>='a' && str[a]<='z')
-else if(str[a]>=' ')
-else
-i++;
-                                
-     
-    }
- 
-    printf("%d",i);
- 
-    return 0;
+
+    printf("Special characters = %d", spclchar);
+
 }
